@@ -20,6 +20,6 @@ void PerceptronAndTrainer::train(Perceptron& perceptron, float learningRate) {
 
 void PerceptronAndTrainer::trainProblems(Perceptron& perceptron, float learningRate) {
 	for(auto problem : this->problems) {
-		perceptron.train(problem.inputs, problem.desiredOutput, learningRate);
+		perceptron.train(problem.inputs, problem.desired, learningRate);
 	}
 }

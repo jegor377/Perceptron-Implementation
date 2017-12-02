@@ -5,7 +5,7 @@
 
 struct PerceptronProblem {
 	std::vector<float> inputs;
-	float desiredOutput;
+	float desired;
 };
 
 #endif

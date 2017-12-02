@@ -28,14 +28,14 @@ float Perceptron::feedForward(std::vector<float>& inputs) {
 
 void Perceptron::train(
 	std::vector<float>& inputs,
-	float desiredOutput,
+	float desired,
 	float learningRate) {
 	if(this->weights.size() == inputs.size()) {
-		float guessOutput = this->feedForward(inputs);
-		float errorOutput = desiredOutput - guessOutput;
+		float guess = this->feedForward(inputs);
+		float error = desired - guess;
 
 		for(int i=0; i<this->weights.size(); i++) {
-			this->weights[i] += learningRate * errorOutput * inputs[i];
+			this->weights[i] += learningRate * error * inputs[i];
 		}
 	} else throw WeightsAndInputsSizesNotEqual();
 }
