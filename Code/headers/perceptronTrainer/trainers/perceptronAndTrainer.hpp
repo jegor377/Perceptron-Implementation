@@ -12,7 +12,8 @@ public:
 	PerceptronAndTrainer(int feedBackwardRepeatCount);
 
 	virtual void train(Perceptron& perceptron, float learningRate = 0.1);
-	void trainProblems(Perceptron& perceptron, float learningRate = 0.1);
+private:
+	void trainProblems(Perceptron& perceptron, float learningRate);
 };
 
 #endif
