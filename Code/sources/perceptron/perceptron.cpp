@@ -1,14 +1,15 @@
 #include "../../headers/perceptron/perceptron.hpp"
 #include "../../headers/perceptron/weightsAndInputsSizesNotEqual.hpp"
 
-Perceptron::Perceptron(
-	int weightsAmount,
-	std::function<float()>& randomProductFunc,
-	std::function<float(float)> activationFunc) {
+Perceptron::Perceptron(int weightsAmount, std::function<float()>& randomProductFunc, std::function<float(float)> activationFunc) {
+	this->createWeights(weightsAmount, randomProductFunc);
+	this->activationFunc = activationFunc;
+}
+
+void Perceptron::createWeights(int weightsAmount, std::function<float()>& randomProductFunc) {
 	while(weightsAmount--) {
 		this->weights.push_back(randomProductFunc());
 	}
-	this->activationFunc = activationFunc;
 }
 
 Perceptron::~Perceptron() {
@@ -26,10 +27,7 @@ float Perceptron::feedForward(std::vector<float>& inputs) {
 	throw WeightsAndInputsSizesNotEqual();
 }
 
-void Perceptron::train(
-	std::vector<float>& inputs,
-	float desired,
-	float learningRate) {
+void Perceptron::train(std::vector<float>& inputs, float desired, float learningRate) {
 	if(this->weights.size() == inputs.size()) {
 		float guess = this->feedForward(inputs);
 		float error = desired - guess;

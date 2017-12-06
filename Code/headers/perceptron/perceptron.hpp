@@ -16,6 +16,9 @@ public:
 	float feedForward(std::vector<float>& inputs);
 	// https://en.wikipedia.org/wiki/Backpropagation - learning proccess for perceptron.
 	void train(std::vector<float>& inputs, float desiredOutput, float learningRate);
+	
+private:
+	void createWeights(int weightsAmount, std::function<float()>& randomProductFunc);
 };
 
 #endif
