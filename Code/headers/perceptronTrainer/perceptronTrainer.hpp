@@ -5,10 +5,10 @@
 
 class PerceptronTrainer {
 protected:
-	int feedBackwardRepeatCount;
+	int trainingsCount;
 
 public:
-	PerceptronTrainer(int feedBackwardRepeatCount);
+	PerceptronTrainer(int trainingsCount);
 
 	virtual void train(Perceptron& perceptron, float learningRate = 0.1) = 0;
 };

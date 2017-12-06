@@ -1,7 +1,7 @@
 #include "../../../headers/perceptronTrainer/trainers/perceptronAndTrainer.hpp"
 
-PerceptronAndTrainer::PerceptronAndTrainer(int feedBackwardRepeatCount)
-	: PerceptronTrainer(feedBackwardRepeatCount)
+PerceptronAndTrainer::PerceptronAndTrainer(int trainingsCount)
+	: PerceptronTrainer(trainingsCount)
 {
 	this->problems = {
 		PerceptronProblem{{0, 0}, 0},
@@ -12,7 +12,7 @@ PerceptronAndTrainer::PerceptronAndTrainer(int feedBackwardRepeatCount)
 }
 
 void PerceptronAndTrainer::train(Perceptron& perceptron, float learningRate) {
-	auto i = this->feedBackwardRepeatCount;
+	auto i = this->trainingsCount;
 	while(i--) {
 		this->trainProblems(perceptron, learningRate);
 	}
