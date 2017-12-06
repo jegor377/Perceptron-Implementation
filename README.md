@@ -1,2 +1,2 @@
 # Perceptron-Implementation
-My old perceptron implementation
+My perceptron implementation
