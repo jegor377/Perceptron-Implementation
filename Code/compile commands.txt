@@ -1,0 +1,5 @@
+g++ -c sources/main.cpp headers/perceptron/weightsAndInputsSizesNotEqual.hpp sources/perceptron/weightsAndInputsSizesNotEqual.cpp headers/perceptron/perceptron.hpp sources/perceptron/perceptron.cpp headers/perceptronProblem/perceptronProblem.hpp headers/perceptronTrainer/perceptronTrainer.hpp $(SOURCES)perceptronTrainer/perceptronTrainer.cpp $(HEADERS)perceptronTrainer/trainers/perceptronAndTrainer.hpp $(SOURCES)perceptronTrainer/trainers/perceptronAndTrainer.cpp
+
+g++ -o main main.o perceptron.o perceptronAndTrainer.o perceptronTrainer.o weightsAndInputsSizesNotEqual.o
+
+main

@@ -65,7 +65,9 @@ int main() {
 	Perceptron perceptron(WEIGHTS_COUNT, _randomProductFunc, _activationFunc);
 
 	PerceptronAndTrainer trainer(LEARNING_REPEAT_COUNT);
+	cout<<"Perceptron AND GATE training..."<<endl;
 	trainer.train(perceptron);
+	cout<<"Training finished."<<endl;
 
 	auto inputs = getInputsFromUser();
 	returnToUserFeedForwardResult(perceptron, inputs);
